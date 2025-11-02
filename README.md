@@ -24,18 +24,23 @@ A mobile-first link tree style portfolio website for Mandolyn White, a professio
    npm install
    ```
 
-2. Run the development server:
+2. Add the portfolio image:
+   - Save Mandolyn's headshot as `public/images/mandolyn-headshot.jpg`
+   - The image should be square (recommended: 400x400px)
+
+3. Run the development server:
    ```bash
    npm run dev
    ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Structure
 
 - `src/app/page.tsx` - Main portfolio page
 - `src/app/layout.tsx` - Root layout component
 - `src/app/globals.css` - Global styles with Tailwind CSS
+- `public/images/` - Image assets directory
 
 ## Social Links
 

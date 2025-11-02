@@ -8,11 +8,16 @@ export default function Home() {
         
         {/* Header Section - Headshot, Name, Title */}
         <div className="text-center space-y-4">
-          {/* Headshot placeholder */}
+          {/* Professional headshot */}
           <div className="w-32 h-32 mx-auto relative">
-            <div className="w-full h-full bg-gradient-to-br from-purple-200 to-pink-200 rounded-full flex items-center justify-center">
-              <span className="text-gray-600 text-sm">Headshot</span>
-            </div>
+            <Image
+              src="/images/mandolyn-headshot.jpg"
+              alt="Mandolyn White - Mural Artist"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+              priority
+            />
           </div>
           
           {/* Name and Title */}
