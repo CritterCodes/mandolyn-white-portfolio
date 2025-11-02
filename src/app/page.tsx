@@ -7,6 +7,7 @@ import { FaFacebook, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { SplashScreen } from '@/components/splash-screen'
 import { AnimatedBackground } from '@/components/animated-background'
+import { ContactButton } from '@/components/contact-button'
 
 export default function Home() {
     const [showSplash, setShowSplash] = useState(true)
@@ -117,26 +118,22 @@ export default function Home() {
 
                     <div className="flex justify-center items-center space-x-4 flex-wrap gap-2">
                         {/* Phone */}
-                        <motion.a
+                        <ContactButton
                             href="tel:+1234567890"
+                            value="(123) 456-7890"
+                            label="Phone"
+                            icon={<FaPhone className="w-5 h-5" />}
                             className="flex items-center justify-center w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full transition-colors duration-200 shadow-lg hover:shadow-xl"
-                            aria-label="Phone: (123) 456-7890"
-                            whileHover={{ scale: 1.1, rotate: 5 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            <FaPhone className="w-5 h-5" />
-                        </motion.a>
+                        />
 
                         {/* Email */}
-                        <motion.a
+                        <ContactButton
                             href="mailto:mandolyn@example.com"
+                            value="mandolyn@example.com"
+                            label="Email"
+                            icon={<FaEnvelope className="w-5 h-5" />}
                             className="flex items-center justify-center w-14 h-14 bg-red-600 hover:bg-red-700 text-white rounded-full transition-colors duration-200 shadow-lg hover:shadow-xl"
-                            aria-label="Email: mandolyn@example.com"
-                            whileHover={{ scale: 1.1, rotate: -5 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            <FaEnvelope className="w-5 h-5" />
-                        </motion.a>
+                        />
 
                         {/* Facebook */}
                         <motion.a
