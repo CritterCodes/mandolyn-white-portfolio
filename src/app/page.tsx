@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { FaFacebook, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { SplashScreen } from '@/components/splash-screen'
+import { AnimatedBackground } from '@/components/animated-background'
 
 export default function Home() {
     const [showSplash, setShowSplash] = useState(true)
@@ -39,16 +40,17 @@ export default function Home() {
 
     return (
         <motion.main 
-            className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-900 transition-colors duration-500"
+            className="min-h-screen bg-artistic-pattern bg-watercolor dark:bg-gradient-to-br dark:from-gray-900 dark:to-purple-900 transition-all duration-500 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
         >
+            <AnimatedBackground />
             <ThemeToggle />
 
             {/* Container with mobile-first responsive design */}
             <motion.div 
-                className="max-w-md mx-auto p-6 space-y-8"
+                className="max-w-md mx-auto p-6 space-y-8 relative z-10"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -106,49 +108,37 @@ export default function Home() {
                     </p>
                 </motion.div>
 
-                {/* Contact Section */}
+                {/* Connect With Me Section */}
                 <motion.div 
-                    className="space-y-3"
-                    variants={itemVariants}
-                >
-                    <h2 className="text-xl font-semibold text-gray-800 dark:text-white text-center">Contact</h2>
-
-                    {/* Phone */}
-                    <motion.a
-                        href="tel:+1234567890"
-                        className="block w-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 hover:border-purple-300 dark:hover:border-purple-500 text-gray-700 dark:text-gray-300 font-medium py-4 px-6 rounded-lg text-center transition-colors duration-200"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                    >
-                        <div className="flex items-center justify-center space-x-3">
-                            <FaPhone className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                            <span>(123) 456-7890</span>
-                        </div>
-                    </motion.a>
-
-                    {/* Email */}
-                    <motion.a
-                        href="mailto:mandolyn@example.com"
-                        className="block w-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 hover:border-purple-300 dark:hover:border-purple-500 text-gray-700 dark:text-gray-300 font-medium py-4 px-6 rounded-lg text-center transition-colors duration-200"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                    >
-                        <div className="flex items-center justify-center space-x-3">
-                            <FaEnvelope className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                            <span>mandolyn@example.com</span>
-                        </div>
-                    </motion.a>
-                </motion.div>
-
-                {/* Social Links */}
-                <motion.div 
-                    className="space-y-3"
+                    className="space-y-4"
                     variants={itemVariants}
                 >
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-white text-center">Connect With Me</h2>
 
-                    <div className="flex justify-center space-x-4">
-                        {/* Facebook Link */}
+                    <div className="flex justify-center items-center space-x-4 flex-wrap gap-2">
+                        {/* Phone */}
+                        <motion.a
+                            href="tel:+1234567890"
+                            className="flex items-center justify-center w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full transition-colors duration-200 shadow-lg hover:shadow-xl"
+                            aria-label="Phone: (123) 456-7890"
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <FaPhone className="w-5 h-5" />
+                        </motion.a>
+
+                        {/* Email */}
+                        <motion.a
+                            href="mailto:mandolyn@example.com"
+                            className="flex items-center justify-center w-14 h-14 bg-red-600 hover:bg-red-700 text-white rounded-full transition-colors duration-200 shadow-lg hover:shadow-xl"
+                            aria-label="Email: mandolyn@example.com"
+                            whileHover={{ scale: 1.1, rotate: -5 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <FaEnvelope className="w-5 h-5" />
+                        </motion.a>
+
+                        {/* Facebook */}
                         <motion.a
                             href="https://www.facebook.com/share/16NKMtdhBr/"
                             target="_blank"
@@ -161,7 +151,7 @@ export default function Home() {
                             <FaFacebook className="w-6 h-6" />
                         </motion.a>
 
-                        {/* Instagram Link */}
+                        {/* Instagram */}
                         <motion.a
                             href="https://www.instagram.com/mandolynrae_?igsh=cWtuemEzOGNza2gy"
                             target="_blank"

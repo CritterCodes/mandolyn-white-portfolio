@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom background patterns for light mode */
+@layer utilities {
+  .bg-artistic-pattern {
+    background-color: #fdf7fd;
+    background-image: 
+      /* Paint brush strokes pattern */
+      radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.12) 0%, transparent 30%),
+      radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 35%),
+      radial-gradient(circle at 40% 80%, rgba(139, 69, 19, 0.06) 0%, transparent 25%),
+      /* Paint splatters */
+      radial-gradient(circle at 60% 30%, rgba(251, 146, 60, 0.08) 0%, transparent 20%),
+      radial-gradient(circle at 30% 70%, rgba(168, 85, 247, 0.07) 0%, transparent 15%),
+      radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.06) 0%, transparent 18%),
+      /* Organic shapes */
+      radial-gradient(ellipse 80px 120px at 15% 30%, rgba(168, 85, 247, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 100px 80px at 85% 70%, rgba(236, 72, 153, 0.04) 0%, transparent 50%),
+      /* Subtle brush texture */
+      linear-gradient(45deg, rgba(168, 85, 247, 0.02) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(236, 72, 153, 0.02) 25%, transparent 25%);
+    background-size: 
+      300px 300px,
+      200px 200px, 
+      250px 250px,
+      180px 180px,
+      150px 150px,
+      190px 190px,
+      120px 120px,
+      140px 140px,
+      60px 60px,
+      60px 60px;
+    background-position: 
+      0 0,
+      100px 100px,
+      200px 50px,
+      300px 200px,
+      150px 300px,
+      400px 80px,
+      50px 150px,
+      350px 250px,
+      0 0,
+      30px 30px;
+  }
+
+  .bg-paint-dots {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.18) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.12) 1px, transparent 1px),
+      radial-gradient(circle at 50% 10%, rgba(251, 146, 60, 0.1) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 10% 90%, rgba(139, 69, 19, 0.08) 1px, transparent 1px),
+      radial-gradient(circle at 85% 45%, rgba(168, 85, 247, 0.06) 0.8px, transparent 0.8px);
+    background-size: 
+      80px 80px,
+      60px 60px,
+      100px 100px,
+      70px 70px,
+      50px 50px;
+    background-position:
+      0 0,
+      40px 40px,
+      20px 20px,
+      60px 10px,
+      25px 35px;
+  }
+
+  .bg-watercolor {
+    background: 
+      radial-gradient(ellipse 400px 250px at 50% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 250px 350px at 20% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 55%),
+      radial-gradient(ellipse 300px 200px at 80% 60%, rgba(251, 146, 60, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 200px 300px at 90% 10%, rgba(139, 69, 19, 0.06) 0%, transparent 45%),
+      linear-gradient(135deg, #fdf7fd 0%, #fef7ff 30%, #f9f7ff 70%, #fdf2f8 100%);
+  }
+
+  .bg-canvas-texture {
+    background-color: #fefbff;
+    background-image: 
+      /* Canvas texture */
+      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(168, 85, 247, 0.01) 2px, rgba(168, 85, 247, 0.01) 4px),
+      repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(236, 72, 153, 0.01) 2px, rgba(236, 72, 153, 0.01) 4px),
+      /* Paint drips */
+      linear-gradient(180deg, transparent 80%, rgba(251, 146, 60, 0.05) 90%, transparent 100%),
+      /* Color wash */
+      radial-gradient(ellipse 500px 300px at 30% 40%, rgba(168, 85, 247, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 400px at 70% 70%, rgba(236, 72, 153, 0.06) 0%, transparent 60%);
+  }
+}
